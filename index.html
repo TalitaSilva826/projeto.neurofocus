@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NeuroFocus - Aumente seu foco e produtividade com trilhas sonoras personalizadas baseadas em neurociência." />
+  <meta property="og:title" content="NeuroFocus" />
+  <meta property="og:description" content="Aplicativo de foco e produtividade com trilhas sonoras personalizadas baseadas em neurociência." />
+  <meta property="og:type" content="website" />
+  <title>NeuroFocus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header-custom text-white py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="h3 mb-0">NeuroFocus</h1>
+      <nav>
+        <a href="#beneficios" class="text-white me-3">Benefícios</a>
+        <a href="#depoimentos" class="text-white me-3">Depoimentos</a>
+        <a href="#planos" class="text-white">Planos</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero d-flex flex-column justify-content-center align-items-center text-center text-white">
+    <canvas id="waveCanvas"></canvas>
+    <div class="hero-content">
+      <h2 class="display-4">NeuroFocus</h2>
+      <p class="lead">Aprenda a usar trilhas sonoras personalizadas para ampliar seu foco e produtividade</p>
+      <a href="#planos" class="btn btn-primary">COMECE AGORA</a>
+    </div>
+  </section>
+
+  <!-- Benefícios -->
+  <section id="beneficios" class="py-5 bg-dark text-white">
+    <div class="container">
+      <h3 class="mb-4">Como o aplicativo funciona</h3>
+      <p>
+        O NeuroFocus utiliza inteligência artificial e princípios da neurociência para criar trilhas sonoras que se adaptam às suas necessidades cognitivas, promovendo concentração, foco ou relaxamento.
+      </p>
+      <h4 class="mt-4">A Ciência da Terapia Musical</h4>
+      <p>
+        Baseada em décadas de estudos, a terapia musical mostra como sons podem melhorar o bem-estar emocional e físico. O NeuroFocus usa esses fundamentos para gerar experiências sonoras personalizadas.
+      </p>
+      <h4 class="mt-4">Como a Música Afeta o Cérebro</h4>
+      <ul>
+        <li><strong>Liberação de Dopamina:</strong> Sons agradáveis estimulam o sistema de recompensa do cérebro.</li>
+        <li><strong>Redução de Cortisol:</strong> Sons relaxantes ajudam a reduzir o estresse.</li>
+        <li><strong>Estímulo Cognitivo:</strong> A música ativa múltiplas regiões cerebrais simultaneamente.</li>
+      </ul>
+      <h4 class="mt-4">O Papel da Música na Reabilitação</h4>
+      <p>
+        Utilizada em terapias para recuperação neurológica, a música melhora a coordenação motora, linguagem e memória.
+      </p>
+      <h4 class="mt-4">Provas Científicas</h4>
+      <p>
+        Pesquisas demonstram que a música reduz ansiedade, melhora o humor e ajuda na recuperação de traumas neurológicos.
+      </p>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section id="depoimentos" class="py-5 text-white" style="background-color: #1f1f1f;">
+    <div class="container">
+      <h3 class="mb-4 text-center">Depoimentos</h3>
+      <div class="row">
+        <div class="col-md-4">
+          <blockquote class="blockquote">
+            <p>"O NeuroFocus me ajudou a melhorar meu desempenho nos estudos como nunca antes!"</p>
+            <footer class="blockquote-footer text-white-50">Ana, estudante de medicina</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-4">
+          <blockquote class="blockquote">
+            <p>"Uso diariamente no trabalho. Sinto muito mais foco e menos ansiedade."</p>
+            <footer class="blockquote-footer text-white-50">Carlos, desenvolvedor de software</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-4">
+          <blockquote class="blockquote">
+            <p>"As trilhas são incríveis. Sinto que minha produtividade dobrou!"</p>
+            <footer class="blockquote-footer text-white-50">Juliana, designer</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planos -->
+  <section id="planos" class="py-5 bg-dark text-white">
+    <div class="container">
+      <h3 class="mb-4 text-center">Escolha seu plano</h3>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <div class="card bg-secondary text-white mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Grátis</h5>
+              <p class="card-text">3 trilhas básicas</p>
+              <p class="card-text">R$ 0/mês</p>
+              <a href="#" class="btn btn-outline-light">Começar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-primary text-white mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Pro</h5>
+              <p class="card-text">Trilhas premium</p>
+              <p class="card-text">R$ 19,90/mês</p>
+              <a href="#" class="btn btn-light">Assinar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-dark border border-light text-white mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Premium</h5>
+              <p class="card-text">Trilhas ilimitadas + relatórios de produtividade</p>
+              <p class="card-text">R$ 29,90/mês</p>
+              <a href="#" class="btn btn-outline-light">Assinar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 bg-dark text-white">
+    <p>&copy; 2025 NeuroFocus. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Botão de play com fundo transparente -->
+  <button id="playAudioBtn" class="audio-btn">▶</button>
+
+  <!-- Áudio oculto -->
+  <audio id="audioRelax" loop>
+    <source src="audio/relaxante.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <!-- Scripts -->
+  <script>
+    const canvas = document.getElementById('waveCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = 150;
+    }
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    let step = 0;
+    let hue = 270;
+    function drawWave() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.beginPath();
+      for (let x = 0; x < canvas.width; x++) {
+        const y = 75 + 30 * Math.sin((x + step) * 0.02);
+        ctx.lineTo(x, y);
+      }
+      ctx.strokeStyle = `hsl(${hue}, 80%, 65%)`;
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      hue += 0.1;
+      if (hue > 300) hue = 260;
+
+      step++;
+      requestAnimationFrame(drawWave);
+    }
+    drawWave();
+  </script>
+
+  <script>
+    const audio = document.getElementById('audioRelax');
+    const playBtn = document.getElementById('playAudioBtn');
+
+    playBtn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        playBtn.textContent = '⏸'; // Muda o ícone para pause
+      } else {
+        audio.pause();
+        playBtn.textContent = '▶'; // Volta para play
+      }
+    });
+</script>
+
+</body>
+
+</html>
