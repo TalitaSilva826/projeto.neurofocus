@@ -21,7 +21,7 @@
       <h1 class="h3 mb-0 d-flex align-items-center">
         <img src="imagens/logo-brancatransp.png" alt="Logo NeuroFocus" class="logo-img me-2">
         <span>NeuroFocus</span>
-      </h1>   
+      </h1>
 
       <nav>
         <a href="#beneficios" class="text-white me-3">Benefícios</a>
@@ -32,13 +32,18 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero d-flex flex-column justify-content-center align-items-center text-center text-white">
-    <canvas id="waveCanvas"></canvas>
-    <div class="hero-content">
-      <h2 class="display-4">NeuroFocus</h2>
-      <p class="lead">Aprenda a usar trilhas sonoras personalizadas para ampliar seu foco e produtividade</p>
-      <a href="#planos" class="btn btn-primary">COMECE AGORA</a>
+  <section class="hero d-flex justify-content-center align-items-center text-center text-white">
+
+    <!-- Quadrado com texto e linhas animadas -->
+    <div class="hero-content position-relative">
+      <canvas id="audioWaveCanvas"></canvas>
+      <div class="hero-text">
+        <h2 class="display-4">NeuroFocus</h2>
+        <p class="lead">Aprenda a usar trilhas sonoras personalizadas para ampliar seu foco e produtividade</p>
+        <a href="#planos" class="btn btn-primary">COMECE AGORA</a>
+      </div>
     </div>
+
   </section>
 
   <!-- Benefícios -->
@@ -141,7 +146,7 @@
   </footer>
 
   <!-- Botão de play com fundo transparente -->
-  <button id="playAudioBtn" class="audio-btn">▶</button>
+  <button id="playAudioBtn" class="audio-btn" aria-label="Tocar áudio relaxante">▶</button>
 
   <!-- Áudio oculto -->
   <audio id="audioRelax" loop>
@@ -151,53 +156,58 @@
 
   <!-- Scripts -->
   <script>
-    const canvas = document.getElementById('waveCanvas');
-    const ctx = canvas.getContext('2d');
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = 150;
-    }
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    let step = 0;
-    let hue = 270;
-    function drawWave() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.beginPath();
-      for (let x = 0; x < canvas.width; x++) {
-        const y = 75 + 30 * Math.sin((x + step) * 0.02);
-        ctx.lineTo(x, y);
-      }
-      ctx.strokeStyle = `hsl(${hue}, 80%, 65%)`;
-      ctx.lineWidth = 2;
-      ctx.stroke();
-
-      hue += 0.1;
-      if (hue > 300) hue = 260;
-
-      step++;
-      requestAnimationFrame(drawWave);
-    }
-    drawWave();
-  </script>
-
-  <script>
     const audio = document.getElementById('audioRelax');
     const playBtn = document.getElementById('playAudioBtn');
 
     playBtn.addEventListener('click', () => {
       if (audio.paused) {
         audio.play();
-        playBtn.textContent = '⏸'; // Muda o ícone para pause
+        playBtn.textContent = '⏸'; // Ícone pause
+        playBtn.setAttribute('aria-label', 'Pausar áudio relaxante');
       } else {
         audio.pause();
-        playBtn.textContent = '▶'; // Volta para play
+        playBtn.textContent = '▶'; // Ícone play
+        playBtn.setAttribute('aria-label', 'Tocar áudio relaxante');
       }
     });
-</script>
+  </script>
+
+  <script>
+    // Animação simples para as linhas de áudio atrás do texto
+    const canvas = document.getElementById('audioWaveCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      const content = canvas.parentElement;
+      canvas.width = content.offsetWidth;
+      canvas.height = 100; // altura fixa para as ondas
+    }
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    let step = 0;
+    function drawAudioLines() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = 'rgba(138, 43, 226, 0.7)'; // roxo translúcido
+      
+      const amplitude = 15;
+      const frequency = 0.03;
+      const offsetY = canvas.height / 2;
+
+      ctx.beginPath();
+        for (let x = 0; x < canvas.width; x += 1) {
+        const y = offsetY + amplitude * Math.sin(x * frequency + step);
+        ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+
+      step += 0.05;
+      requestAnimationFrame(drawAudioLines);
+    }
+    drawAudioLines();
+  </script>
 
 </body>
 
