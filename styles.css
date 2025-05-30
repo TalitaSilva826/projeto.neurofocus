@@ -13,12 +13,18 @@ body, html {
 
 .header-custom {
   background: linear-gradient(90deg, #000000, #1a1a1a, #2e2e2e);
+  height: 60px; /* Altura fixa */
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .logo-img {
-  height: 100px;
-  margin-right: 10px;
+  height: 100px; 
+  max-height: 100%;
+  object-fit: contain;
 }
+
 
 /* Hero Section */
 .hero {
