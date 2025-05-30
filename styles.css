@@ -15,6 +15,10 @@ body, html {
   background: linear-gradient(90deg, #000000, #1a1a1a, #2e2e2e);
 }
 
+.logo-img {
+  height: 35px;
+  margin-right: 10px;
+}
 
 /* Hero Section */
 .hero {
