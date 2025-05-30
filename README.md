@@ -30,3 +30,11 @@ Seções de navegação simples (ex: Benefícios, Depoimentos e Planos)
 
 Animações sutis para transições suaves e interatividade
 
+![image](https://github.com/user-attachments/assets/62f026a9-73df-4311-90d6-75d1aa06fec0)
+![image](https://github.com/user-attachments/assets/f0244df5-cc98-4758-a5ce-34100a29237b)
+![image](https://github.com/user-attachments/assets/83c0f06a-6a86-4d4e-bbe8-a385fbaf8fa5)
+![image](https://github.com/user-attachments/assets/2c3a0309-642a-440c-b66b-db5f4670312f)
+
+
+
+
