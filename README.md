@@ -22,7 +22,7 @@ index.html – estrutura principal do site
 
 style.css – folha de estilo com definições visuais
 
-assets/ – pasta para imagens, ícones e outros recursos
+assets(pasta imagens & audio)/ – pasta para imagens, ícones e outros recursos
 
 Funcionalidades | Design responsivo (funciona bem em dispositivos móveis)
 
